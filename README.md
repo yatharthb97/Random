@@ -97,11 +97,11 @@ double rnd = mt.gauss_nondet();
 double rnd = mt.uni_nondet();
 
  // Returns a non-deterministic number of the raw result type of the PRNG
-double rnd = mt.get_nondet();
+uint32_t raw_rnd = mt.get_nondet();
 
 // Returns a non-deterministic number of the raw result type of the PRNG and 
 //closes the non-deterministic source  (recommended for single use case)
-double rnd = mt.get_nondet_nclose();
+uint32_t raw_rnd = mt.get_nondet_nclose();
 ```
 
 ##  Saved Seeds
