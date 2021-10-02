@@ -1,4 +1,4 @@
-# `PRNGWrapper` 
+# PRNGWrapper
 
 ## `PRNGWrapper` for C++ STL PRNGs
 
