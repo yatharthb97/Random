@@ -4,7 +4,8 @@
 
 ## Why not use `std::random_device` ?
 
-`std::random_device` is not guarenteed to use a non-deterministic source and other problems.
+`std::random_device` is not guarenteed to use a non-deterministic source and other problems exist as well.
+
 Read more: https://www.pcg-random.org/posts/cpps-random_device.html
 
 
