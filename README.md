@@ -110,12 +110,13 @@ uint32_t raw_rnd = mt.get_nondet();
 uint32_t raw_rnd = mt.get_nondet_nclose();
 ```
 
-##  Saved Seeds
+## Saved Seeds
 
 ```c++
 mt.get_seedlist(); //Returns the last used seeds as a std::vector
 mt.free_seedlist(); //Delete the saved seeds
 mt.get_seedlist_size(); //Returns the size of the seedlist
+mt.warm_up(70,000); // Warm-up the generator by discarding 70,000 points
 ```
 
 
