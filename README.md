@@ -21,20 +21,14 @@ doxygen PRNGWDoxyFile
 ## Features
 
 *  Full initalization (seeding) of the `state_size` of the engine, from non-deterministic source.
+  + Using just one seed value results in the initial state that is a small subset of the total state size of the generator. Hence, it directly limits the number of independent and non-overlapping random streams the generator can produce.
 
-  → Using just one seed value results in the initial state that is a small subset of the total state size of the generator. Hence, it directly limits the number of independent and non-overlapping random streams the generator can produce.
-
-+ Provides a mechanism for warm-up of generators
-
-  → Many PRNGs require a warm-up run to recover from bad initalization states. These generators hence produce low-quality streams for a while before settling down. 
-
-+ The C++ standard does not guarantee the initalization states of random distributions, hence, changing the compiler might break reproducibility of the streams. The class implements methods that saves the distribution states as well.
-
-+ Resource initalization is verbose and bulky and requires constructing multiple objects. This `class` encapsulates them into a single object and provides easy to understand functions. 
-
-+ The library also implements commonly used features and an error propagation mechanism.
-
-+ Saves the last set of seeds that were used with the generator.
++   Provides a mechanism for warm-up of generators
+    + Many PRNGs require a warm-up run to recover from bad initalization states. These generators hence produce low-quality streams for a while before settling down. 
++   The C++ standard does not guarantee the initalization states of random distributions, hence, changing the compiler might break reproducibility of the streams. The class implements methods that saves the distribution states as well.
++   Resource initalization is verbose and bulky and requires constructing multiple objects. This `class` encapsulates them into a single object and provides easy to understand functions. 
++   The library also implements commonly used features and an error propagation mechanism.
++   Saves the last set of seeds that were used with the generator.
 
 
 
@@ -115,7 +109,7 @@ double rnd = mt.get_nondet_nclose();
 ```c++
 mt.get_seedlist(); //Returns the last used seeds as a std::vector
 mt.free_seedlist(); //Delete the saved seeds
-get_seedlist_size(); //Returns the size of the seedlist
+mt.get_seedlist_size(); //Returns the size of the seedlist
 ```
 
 
